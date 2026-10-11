@@ -1,0 +1,53 @@
+<section class="page-heading">
+    <h1>All Tasks</h1>
+    <p>Manage your tasks and keep track of your progress</p>
+</section>
+
+<section class="task-panel">
+    @if(store.error()){
+        <p class="error">{{store.error()}}</p>
+    }
+    @if(store.loading()){
+        <p class="hint">Loading tasks...</p>
+    }
+<form class="task-form" (ngSubmit)="addTasks()">
+    <input
+     type="text" 
+     name="title"
+     maxlength="700"
+     [(ngModel)]="newTitle"
+     placeholder="What needs to be done?"
+     aria-label="New Task title">
+    <button type="submit"><i class="bi bi-plus-lg" aria-hidden="true"></i>  Add Task</button>
+</form>
+
+<div class="filters">
+    <button type="button"  [class.selected]="filter() === 'all'" (click)="filter.set('all')"> All</button>
+    <button type="button" [class.selected]="filter() === 'pending'" (click)="filter.set('pending')"> Pending</button>
+    <button type="button"[class.selected]="filter() === 'completed'" (click)="filter.set('completed')">Completed</button>
+</div>
+<ul class="task-list">
+    @for(task of visibleTasks(); track task.taskID){
+    <li class="task-item">
+        <input 
+        type="checkbox"
+        [checked]="task.isCompleted"
+        (change)="store.edit(task)"
+        [attr.aria-label]="'MARK' + task.title + 'as completed'"
+        />
+        <span class="task-title">{{task.title}}</span>
+        <span class="task-date">{{task.createdAt}}</span>
+        <button type="button" class="delete" (click)="store.remove(task.taskID)" aria-label="Delete task">
+            <i class="bi bi-trash" aria-hidden="true"></i>
+        </button>
+    </li>
+    } @empty{
+        <li class="empty-state">
+            <i class="bi bi-inbox empty-icon" aria-hidden="true"></i>
+            <h2>No tasks here</h2>
+            <p>Add a task above to get started</p>
+        </li>
+    }
+</ul>
+
+</section>

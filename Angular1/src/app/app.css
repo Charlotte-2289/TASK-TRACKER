@@ -1,0 +1,4 @@
+.main-content {
+  width: min(1200px, 92%);
+  margin: 36px auto;
+}

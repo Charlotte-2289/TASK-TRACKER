@@ -1,0 +1,151 @@
+.page-heading h1 {
+  margin: 0 0 8px;
+}
+
+.page-heading p {
+  margin-bottom: 28px;
+  color: #64748b;
+}
+
+.task-panel {
+  padding: 24px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+}
+
+.error {
+  padding: 10px 14px;
+  color: #b91c1c;
+  background: #fef2f2;
+  border-radius: 8px;
+}
+
+.hint {
+  color: #64748b;
+}
+
+.task-form {
+  display: flex;
+  gap: 12px;
+}
+
+.task-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 13px 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  outline: none;
+}
+
+.task-form input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgb(37 99 235 / 12%);
+}
+
+.task-form button {
+  padding: 12px 18px;
+  color: white;
+  background: #2563eb;
+  border: none;
+  border-radius: 9px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  margin-top: 26px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.filters button {
+  padding: 9px 15px;
+  color: #64748b;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.filters button.selected {
+  color: #2563eb;
+  background: #eff6ff;
+  font-weight: 600;
+}
+
+.task-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 4px;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.task-title {
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+
+.task-date {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.task-item.done .task-title {
+  color: #94a3b8;
+  text-decoration: line-through;
+}
+
+.task-item input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+.delete {
+  color: #94a3b8;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.delete:hover {
+  color: #dc2626;
+}
+
+.empty-state {
+  padding: 55px 15px;
+  text-align: center;
+  list-style: none;
+}
+
+.empty-state p {
+  color: #64748b;
+}
+
+.empty-icon {
+  font-size: 40px;
+  color: #2563eb;
+}
+
+@media (max-width: 500px) {
+  .task-panel {
+    padding: 15px;
+  }
+
+  .task-form {
+    flex-direction: column;
+  }
+}

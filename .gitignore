@@ -1,0 +1,19 @@
+
+# .NET generated files
+**/bin/
+**/obj/
+
+# Angular generated files
+**/node_modules/
+**/dist/
+**/.angular/
+
+# Editor files
+.vscode/
+.vs/
+
+# Logs and environment variables
+*.log
+.env
+.env.*
+!.env.example
